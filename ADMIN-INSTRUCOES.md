@@ -33,7 +33,7 @@ Essa chave publicável pode estar no código do navegador quando as políticas R
 ## 3. Publicar e usar
 
 1. Envie todos os arquivos do projeto para o repositório conectado ao Vercel, incluindo `admin.html`, `admin.js`, `admin.css`, `supabase-config.js`, `supabase-setup.sql` e a pasta `public`.
-2. Abra `https://SEU-DOMINIO/admin.html` e entre com o e-mail e a senha criados no Supabase.
+2. Abra `https://SEU-DOMINIO/admin` (ou `https://SEU-DOMINIO/admin.html`) e entre com o e-mail e a senha criados no Supabase.
 3. Adicione, edite, oculte ou exclua produtos. Você pode informar URLs de imagens ou enviar arquivos JPG, PNG e WEBP de até 6 MB.
 
 Após configurar o banco, o catálogo será carregado do Supabase. Se a conexão ainda não estiver configurada, a loja continua exibindo os produtos locais de demonstração.
