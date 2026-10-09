@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010"><meta name="description" content="PH Company — moda urbana, seu estilo em primeiro plano.">
+  <title>PH Company — Vista sua presença</title>
+  <link rel="icon" href="public/ph-company-logo-round.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">PH COMPANY <span>—</span> ESTILO QUE FALA POR VOCÊ</div>
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="PH Company início"><img class="brand-logo" src="public/ph-company-logo-round.png" alt="Logo PH Company"></a>
+    <nav class="nav" aria-label="Navegação principal"><a href="#top">Início</a><a href="#catalog">Catálogo</a><a href="#contact">Contato</a></nav>
+    <div class="header-actions"><a class="instagram-link" href="https://www.instagram.com/phcompany.store/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a><button class="cart-trigger" id="openCart" aria-label="Abrir carrinho">Sacola <span class="bag-icon">＋</span><b id="cartCount">0</b></button><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy"><p class="eyebrow">PH COMPANY · DROP 01</p><h1 id="heroTitle">Vista sua<br><em>presença.</em></h1><p class="hero-description">Peças urbanas para quem transforma atitude em estilo.</p><a class="button button-light" href="#catalog">Explorar coleção <span>↘</span></a><p class="hero-note">SEU ESTILO. SUAS REGRAS.</p></div>
+      <div class="hero-art" aria-label="Logo PH Company"><div class="hero-emblem-wrap"><img class="hero-emblem" src="public/ph-company-logo-round.png" alt="Logo PH Company"><span class="hero-emblem-label">PH COMPANY · URBAN WEAR</span></div></div>
+      <div class="hero-index">01 <span>/</span> 05</div>
+    </section>
+    <section class="ticker" aria-label="Mensagem da marca"><div>MOVE WITH INTENTION <span>✳</span> PH COMPANY <span>✳</span> FIND YOUR FORM <span>✳</span> MOVE WITH INTENTION <span>✳</span> PH COMPANY <span>✳</span></div></section>
+    <section class="catalog section-wrap" id="catalog">
+      <div class="section-heading"><div><p class="eyebrow dark-eyebrow">ESCOLHA A SUA PEÇA</p><h2>O catálogo<span>.</span></h2></div><p class="section-intro">Essenciais com personalidade.<br>Encontre seu próximo uniforme.</p></div>
+      <div class="catalog-toolbar"><div class="filters" role="group" aria-label="Filtrar produtos"><button class="filter active" data-filter="all">Todos <span id="allCount">06</span></button><button class="filter" data-filter="camisetas">Camisetas</button><button class="filter" data-filter="conjuntos">Conjuntos</button><button class="filter" data-filter="calcoes">Calções</button></div><p class="catalog-count"><span id="visibleCount">06</span> PEÇAS</p></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+    <section class="manifesto"><p class="eyebrow">PH COMPANY / MANIFESTO</p><p>Não é sobre seguir o fluxo.<br>É sobre <span>marcar presença.</span></p><a href="https://www.instagram.com/phcompany.store/" target="_blank" rel="noreferrer">Acompanhe a PH Company <b>↗</b></a></section>
+    <section class="contact section-wrap" id="contact"><div><p class="eyebrow dark-eyebrow">FALE COM A GENTE</p><h2>Seu próximo<br>look começa aqui<span>.</span></h2></div><div class="contact-side"><p>Consulte tamanhos, disponibilidade e entrega diretamente com a loja.</p><a class="button button-dark" href="https://www.instagram.com/phcompany.store/" target="_blank" rel="noreferrer">Chamar no Instagram <span>↗</span></a></div></section>
+  </main>
+  <footer class="footer"><a class="brand footer-brand" href="#top" aria-label="PH Company início"><img class="brand-logo" src="public/ph-company-logo-round.png" alt="Logo PH Company"></a><p>Seu estilo. Sua presença.</p><a href="https://www.instagram.com/phcompany.store/" target="_blank" rel="noreferrer">@phcompany.store ↗</a><small>© 2026 PH Company</small></footer>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow dark-eyebrow">SEU PEDIDO</p><h2>Sacola <span id="drawerCount">(0)</span></h2></div><button id="closeCart" class="close-cart" aria-label="Fechar carrinho">×</button></div><div id="cartItems" class="cart-items"></div><div class="empty-cart" id="emptyCart"><span>PH</span><p>Sua sacola está vazia.</p><button id="continueShopping">Ver catálogo</button></div><div class="cart-bottom" id="cartBottom"><div class="total-row"><span>Subtotal</span><strong id="cartTotal">R$ 0,00</strong></div><p>Frete e detalhes do pedido serão confirmados com a loja.</p><button class="button button-dark checkout" id="checkout">Finalizar pelo WhatsApp <span>↗</span></button></div></aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body></html>

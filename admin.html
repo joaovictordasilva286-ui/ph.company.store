@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#101010">
+  <title>Administração | PH Company</title>
+  <link rel="icon" href="public/ph-company-logo-round.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header"><a href="index.html" class="brand"><img class="brand-logo" src="public/ph-company-logo-round.png" alt="PH Company"><span class="admin-brand-label">PAINEL DA LOJA</span></a><a href="index.html" class="back-to-store">Ver loja ↗</a></header>
+  <main class="admin-main">
+    <div class="admin-intro"><p class="eyebrow dark-eyebrow">PH COMPANY / GESTÃO</p><h1>Administração<span>.</span></h1><p>Atualize o catálogo sem mexer no código do site.</p></div>
+    <div class="admin-alert" id="setupNotice" hidden></div>
+    <section class="login-card" id="loginPanel"><h2>Acesso do administrador</h2><p>Entre com o e-mail e a senha cadastrados no Supabase.</p><form id="loginForm"><label>E-mail<input name="email" type="email" autocomplete="username" required></label><label>Senha<input name="password" type="password" autocomplete="current-password" required></label><button class="button button-dark" type="submit">Entrar <span>↗</span></button></form><p class="admin-feedback" id="loginFeedback" role="status"></p></section>
+    <section class="manager" id="managerPanel" hidden>
+      <div class="manager-top"><div><p class="eyebrow dark-eyebrow">CATÁLOGO ONLINE</p><h2>Produtos</h2></div><button class="text-button" id="signOut">Sair da conta</button></div>
+      <div class="manager-grid">
+        <form class="product-form" id="productForm">
+          <input type="hidden" name="id">
+          <div class="form-heading"><h3 id="formHeading">Adicionar produto</h3><button type="button" id="clearForm" class="text-button">Limpar</button></div>
+          <label>Nome do produto<input name="name" required maxlength="90" placeholder="Ex.: Camiseta básica"></label>
+          <div class="form-row"><label>Categoria<select name="category" required><option value="camisetas">Camisetas</option><option value="conjuntos">Conjuntos</option><option value="calcoes">Calções</option></select></label><label>Preço (R$)<input name="price" type="number" min="0" step="0.01" required placeholder="99,90"></label></div>
+          <div class="form-row"><label>Preço promocional anterior (opcional)<input name="oldPrice" type="number" min="0" step="0.01" placeholder="Deixe vazio sem promoção"></label><label>Tamanhos disponíveis<input name="sizes" placeholder="Ex.: P, M, G, GG"></label></div>
+          <label>Endereços das fotos (um por linha)<textarea name="imageUrls" rows="3" placeholder="https://... ou public/products/foto.jpg"></textarea></label>
+          <label>Ou envie novas fotos<input name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple><small>As fotos ficam acessíveis no catálogo; somente administradores podem enviar ou alterar arquivos.</small></label>
+          <label class="check-label"><input name="active" type="checkbox" checked> Produto visível no catálogo</label>
+          <button class="button button-dark save-product" type="submit">Salvar produto <span>↗</span></button>
+          <p class="admin-feedback" id="formFeedback" role="status"></p>
+        </form>
+        <div class="admin-product-list"><div class="list-heading"><h3>Itens cadastrados</h3><span id="productTotal">0 produtos</span></div><div id="productList"></div></div>
+      </div>
+    </section>
+  </main>
+  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body></html>
